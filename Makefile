@@ -6,16 +6,20 @@
 #    By: gykoh <gykoh@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/30 16:09:51 by gykoh             #+#    #+#              #
-#    Updated: 2023/09/30 17:01:09 by gykoh            ###   ########.fr        #
+#    Updated: 2023/10/09 12:46:34 by gykoh            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
 NAME = so_long
-LIBFT = -Llibft -Lft
+LIBFT = -Llibft -lft
 MLX = -Lmlx -lmlx -framework OpenGL -framework AppKit
-SRCS = 
+SRCS =	main.c \
+		map_utils_check.c \
+		map_path_check.c \
+		map_total_check.c \
+		map_init.c \
 OBJS = ${SRCS:.c=.o}
 
 all : $(NAME)
