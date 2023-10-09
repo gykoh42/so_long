@@ -6,18 +6,18 @@
 /*   By: gykoh <gykoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/08 19:39:45 by gykoh             #+#    #+#             */
-/*   Updated: 2023/10/09 12:52:21 by gykoh            ###   ########.fr       */
+/*   Updated: 2023/10/09 17:13:19 by gykoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void    free_map(struct s_game *game)
+void    free_map(t_game_info *game)
 {
     int i;
 
     i = 0;
-    while (game->map[i] != '\0')
+    while (game->map[i] != NULL)
     {
         free(game->map[i]);
         i++;
@@ -25,7 +25,7 @@ void    free_map(struct s_game *game)
     free(game->map);
 }
 
-void    get_map(char *argv, struct s_game *game)
+void    get_map(char *argv, t_game_info *game)
 {
     int fd;
     char *line;
@@ -35,13 +35,13 @@ void    get_map(char *argv, struct s_game *game)
 
     fd = open(argv, O_RDONLY);
     if (fd < 0)
-        error_exit("Error");
+        error_exit("Error: fd < 0");
     line = get_next_line(fd);
     total_line = ft_strdup("");
     while (line != NULL)
     {
         if (ft_strchr(line, '\n') == line)
-            error_exit("Error");
+            error_exit("Error: newline is in line");
         tmp = total_line;
         total_line = ft_strjoin(total_line, line);
         free(tmp);
@@ -53,11 +53,12 @@ void    get_map(char *argv, struct s_game *game)
     free(total_line);
     game->map = result;
 }
+#include <stdio.h>
 
-void    init_map(char *argv, struct s_game *game)
+void    init_map(char *argv, t_game_info *game)
 {
-    get_map(argv[1], game);
+    get_map(argv, game);
     map_total_check(game);
     free_map(game);
-    get_map(argv[1], game);
+    get_map(argv, game);
 }
