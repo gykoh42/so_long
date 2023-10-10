@@ -6,7 +6,7 @@
 /*   By: gykoh <gykoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/30 22:12:03 by gykoh             #+#    #+#             */
-/*   Updated: 2023/10/10 19:08:32 by gykoh            ###   ########.fr       */
+/*   Updated: 2023/10/10 20:16:42 by gykoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ int	main(int argc, char **argv)
 								game.map_height * 32, "so_long");
 	convert_and_draw(&game);
 	mlx_hook(game.win, 2, 1L << 0, key_press, &game);
-	mlx_hook(game.win, 17, 1L << 17, close_window, &game);
+	mlx_hook(game.win, 17, 1L << 0, close_window, &game);
 	mlx_loop(game.mlx);
 	return (0);
 }
