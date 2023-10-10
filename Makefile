@@ -6,13 +6,13 @@
 #    By: gykoh <gykoh@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/30 16:09:51 by gykoh             #+#    #+#              #
-#    Updated: 2023/10/10 16:41:56 by gykoh            ###   ########.fr        #
+#    Updated: 2023/10/10 18:33:07 by gykoh            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	= so_long
 CC		= cc
-CFLAGS	= -Wall -Wextra -Werror -g3 #-fsanitize=address
+CFLAGS	= -Wall -Wextra -Werror
 LDLIBS	= -Llibft -lft
 LDMLX	= -Lmlx -lmlx -framework OpenGL -framework AppKit
 
