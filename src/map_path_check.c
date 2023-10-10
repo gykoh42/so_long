@@ -6,7 +6,7 @@
 /*   By: gykoh <gykoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 12:15:43 by gykoh             #+#    #+#             */
-/*   Updated: 2023/10/10 18:26:01 by gykoh            ###   ########.fr       */
+/*   Updated: 2023/10/10 19:10:25 by gykoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,9 +40,9 @@ void	path_check(t_game_info *game)
 		while (game->map[i][j] != '\0')
 		{
 			if (game->map[i][j] == 'E')
-				error_exit("Error: P can't go E");
+				error_exit("Error: player cannot reach the exit");
 			else if (game->collect_cnt != game->collect_route_cnt)
-				error_exit("Error : C 못머금");
+				error_exit("Error : player cannot get whole collect");
 			j++;
 		}
 		i++;

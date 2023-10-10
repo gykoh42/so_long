@@ -6,7 +6,7 @@
 /*   By: gykoh <gykoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/30 17:36:04 by gykoh             #+#    #+#             */
-/*   Updated: 2023/10/10 18:26:16 by gykoh            ###   ########.fr       */
+/*   Updated: 2023/10/10 19:06:28 by gykoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	size_check(t_game_info *game)
 
 	i = 0;
 	if (*game->map == NULL)
-		error_exit("Error: empty file");
+		error_exit("Error: Empty file");
 	while (game->map[0][i] != '\0')
 	{
 		game->map_width++;
@@ -34,7 +34,7 @@ void	size_check(t_game_info *game)
 	while (i < game->map_height)
 	{
 		if ((int)ft_strlen(game->map[i]) != game->map_width)
-			error_exit("Error: map width different");
+			error_exit("Error: The map must be rectangular");
 		i++;
 	}
 }
@@ -52,7 +52,7 @@ void	wall_check(t_game_info *game)
 		{
 			if ((i == 0 || i == game->map_height - 1 || j == 0 \
 				|| j == game->map_width - 1) && game->map[i][j] != '1')
-				error_exit("Error: wall != 1");
+				error_exit("Error: The map must be surrounded by walls");
 			j++;
 		}
 		i++;
@@ -73,7 +73,7 @@ void	component_check(t_game_info *game)
 			if (game->map[i][j] != '0' && game->map[i][j] != '1' \
 				&& game->map[i][j] != 'C' && game->map[i][j] != 'P' \
 				&& game->map[i][j] != 'E')
-				error_exit("Error: different component");
+				error_exit("Error: Different component");
 			j++;
 		}
 		i++;
@@ -103,7 +103,7 @@ void	component_cnt_check(t_game_info *game)
 	}
 	if (!(game->collect_cnt >= 1 && game->player_cnt == 1 \
 		&& game->exit_cnt == 1))
-		error_exit("Error: wrong component count");
+		error_exit("Error: Wrong number of components");
 }
 
 void	component_idx_check(t_game_info *game)

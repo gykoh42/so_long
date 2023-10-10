@@ -6,7 +6,7 @@
 /*   By: gykoh <gykoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/30 22:12:03 by gykoh             #+#    #+#             */
-/*   Updated: 2023/10/10 18:46:56 by gykoh            ###   ########.fr       */
+/*   Updated: 2023/10/10 19:08:32 by gykoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,19 +53,18 @@ void	check_arg(int argc, char **argv)
 	int	i;
 
 	if (argc != 2)
-		error_exit("Error: argc wrong");
+		error_exit("Error: argc != 2");
 	i = ft_strlen(argv[1]);
 	if (argv[1][i - 1] != 'r' || argv[1][i - 2] != 'e' \
 		|| argv[1][i - 3] != 'b' || argv[1][i - 4] != '.')
-		error_exit("Error: file name wrong");
+		error_exit("Error: Wrong file format");
 }
 
 int	main(int argc, char **argv)
 {
 	t_game_info	game;
 
-	if (argc != 2)
-		error_exit("Error: argc != 2");
+	check_arg(argc, argv);
 	init_game(&game);
 	init_map(argv[1], &game);
 	game.mlx = mlx_init();

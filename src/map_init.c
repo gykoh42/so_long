@@ -6,7 +6,7 @@
 /*   By: gykoh <gykoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/08 19:39:45 by gykoh             #+#    #+#             */
-/*   Updated: 2023/10/10 17:51:47 by gykoh            ###   ########.fr       */
+/*   Updated: 2023/10/10 19:08:20 by gykoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,13 +35,13 @@ void	get_map(char *argv, t_game_info *game)
 
 	fd = open(argv, O_RDONLY);
 	if (fd < 0)
-		error_exit("Error: fd < 0");
+		error_exit("Error: Invalid fd value");
 	line = get_next_line(fd);
 	total_line = ft_strdup("");
 	while (line != NULL)
 	{
 		if (ft_strchr(line, '\n') == line)
-			error_exit("Error: newline is in line");
+			error_exit("Error: The map contains line breaks");
 		tmp = total_line;
 		total_line = ft_strjoin(total_line, line);
 		free(tmp);
