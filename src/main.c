@@ -6,7 +6,7 @@
 /*   By: gykoh <gykoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/30 22:12:03 by gykoh             #+#    #+#             */
-/*   Updated: 2023/10/09 17:09:44 by gykoh            ###   ########.fr       */
+/*   Updated: 2023/10/10 11:35:42 by gykoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ int main(int argc, char **argv)
         error_exit("Error: argc != 2");
     init_game(&game);
     init_map(argv[1], &game);
+    convert_and_draw(&game);
     
     return (0);
 }

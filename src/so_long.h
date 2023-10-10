@@ -6,7 +6,7 @@
 /*   By: gykoh <gykoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/30 17:37:53 by gykoh             #+#    #+#             */
-/*   Updated: 2023/10/09 17:12:41 by gykoh            ###   ########.fr       */
+/*   Updated: 2023/10/10 11:33:10 by gykoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,23 +17,33 @@
 # include "../libft/libft.h"
 # include "../mlx/mlx.h"
 
+typedef struct s_img
+{
+    void    *ground;
+    void    *wall;
+    void    *collect;
+    void    *exit;
+    void    *player;
+}   t_img_src;
+
 typedef struct s_game
 {   
-    void    *mlx;
-    void    *win;
+    void        *mlx;
+    void        *win;
 
-    int     C_cnt;
-    int     C_route_cnt;
-    int     P_cnt;
-    int     P_idx_x;
-    int     P_idx_y;
-    int     E_cnt;
+    int         C_cnt;
+    int         C_route_cnt;
+    int         P_cnt;
+    int         P_idx_x;
+    int         P_idx_y;
+    int         E_cnt;
     
-    char    **map;
-    int     map_width;
-    int     map_height;
+    char        **map;
+    int         map_width;
+    int         map_height;
     
-    int     move_cnt;
+    int         move_cnt;
+    t_img_src   img;
 } t_game_info;
 
 void    error_exit(char *str);
@@ -47,5 +57,7 @@ void    path_dfs(t_game_info *game, int row, int col);
 void    path_check(t_game_info *game);
 void    map_total_check(t_game_info *game);
 void    init_map(char *argv, t_game_info *game);
+void    draw_map(t_game_info *game);
+void    convert_and_draw(t_game_info *game);
 
 #endif
