@@ -6,7 +6,7 @@
 /*   By: gykoh <gykoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/08 19:39:45 by gykoh             #+#    #+#             */
-/*   Updated: 2023/10/09 17:13:19 by gykoh            ###   ########.fr       */
+/*   Updated: 2023/10/10 16:29:06 by gykoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,6 @@ void    get_map(char *argv, t_game_info *game)
     free(total_line);
     game->map = result;
 }
-#include <stdio.h>
 
 void    init_map(char *argv, t_game_info *game)
 {

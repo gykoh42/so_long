@@ -6,7 +6,7 @@
 /*   By: gykoh <gykoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 12:15:43 by gykoh             #+#    #+#             */
-/*   Updated: 2023/10/10 15:18:11 by gykoh            ###   ########.fr       */
+/*   Updated: 2023/10/10 16:46:03 by gykoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,8 @@ void    path_check(t_game_info *game)
         {
             if (game->map[i][j] == 'E')
                 error_exit("Error: P can't go E");
+            else if (game->collect_cnt != game->collect_route_cnt)
+                error_exit("Error : C 못머금");
             j++;
         }
         i++;

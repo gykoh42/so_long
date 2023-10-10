@@ -6,7 +6,7 @@
 /*   By: gykoh <gykoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/30 17:37:53 by gykoh             #+#    #+#             */
-/*   Updated: 2023/10/10 15:20:34 by gykoh            ###   ########.fr       */
+/*   Updated: 2023/10/10 17:03:11 by gykoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,5 @@ void    move_left(t_game_info *game);
 void    move_right(t_game_info *game);
 int     key_press(int keycode, t_game_info *game);
 int     close_window(t_game_info *game);
-
-void    check_exit_idx(t_game_info *game);
 
 #endif

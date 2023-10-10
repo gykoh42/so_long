@@ -6,7 +6,7 @@
 /*   By: gykoh <gykoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/30 22:12:03 by gykoh             #+#    #+#             */
-/*   Updated: 2023/10/10 14:44:03 by gykoh            ###   ########.fr       */
+/*   Updated: 2023/10/10 16:57:56 by gykoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,10 +36,17 @@ void    error_exit(char *str)
     exit(1);
 }
 
+int   close_window(t_game_info *game)
+{
+    mlx_destroy_window(game->mlx, game->win);
+    exit(0);
+    return (0);
+}
+
 int main(int argc, char **argv)
 {
     t_game_info game;
-    
+
     if (argc != 2)
         error_exit("Error: argc != 2");
     init_game(&game);
