@@ -6,7 +6,7 @@
 /*   By: gykoh <gykoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 10:09:13 by gykoh             #+#    #+#             */
-/*   Updated: 2023/10/10 14:02:27 by gykoh            ###   ########.fr       */
+/*   Updated: 2023/10/10 17:14:19 by gykoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,6 @@ void draw_map(t_game_info *game)
         y++;
     }
 }
-
 void convert_and_draw(t_game_info *game)
 {
     int width;

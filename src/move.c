@@ -6,7 +6,7 @@
 /*   By: gykoh <gykoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 12:35:26 by gykoh             #+#    #+#             */
-/*   Updated: 2023/10/10 17:00:41 by gykoh            ###   ########.fr       */
+/*   Updated: 2023/10/10 17:14:21 by gykoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,7 +111,7 @@ int    key_press(int keycode, t_game_info *game)
         move_left(game);
     else if (keycode == 2)
         move_right(game);
-    convert_and_draw(game);
+    draw_map(game);
     ft_printf("move_cnt: %d\n", game->move_cnt);
     return (0);
 }
