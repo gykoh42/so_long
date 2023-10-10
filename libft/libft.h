@@ -6,7 +6,7 @@
 /*   By: gykoh <gykoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/28 16:48:22 by gykoh             #+#    #+#             */
-/*   Updated: 2023/10/08 15:57:39 by gykoh            ###   ########.fr       */
+/*   Updated: 2023/10/10 12:40:48 by gykoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <stdarg.h>
+# include <fcntl.h>
 
 int		ft_atoi(const char *str);
 int		ft_isalpha(int c);

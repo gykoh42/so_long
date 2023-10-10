@@ -6,7 +6,7 @@
 /*   By: gykoh <gykoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 10:09:13 by gykoh             #+#    #+#             */
-/*   Updated: 2023/10/10 12:18:32 by gykoh            ###   ########.fr       */
+/*   Updated: 2023/10/10 14:02:27 by gykoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,13 +45,10 @@ void convert_and_draw(t_game_info *game)
     int width;
     int height;
 
-    game->mlx = mlx_init();
-    game->win = mlx_new_window(game->mlx, game->map_width * 32, game->map_height * 32, "so_long");
     game->img.ground = mlx_xpm_file_to_image(game->mlx, "./img/ground.xpm", &width, &height);
     game->img.wall = mlx_xpm_file_to_image(game->mlx, "./img/wall.xpm", &width, &height);
     game->img.collect = mlx_xpm_file_to_image(game->mlx, "./img/collect.xpm", &width, &height);
     game->img.exit = mlx_xpm_file_to_image(game->mlx, "./img/exit.xpm", &width, &height);
     game->img.player = mlx_xpm_file_to_image(game->mlx, "./img/player.xpm", &width, &height);
     draw_map(game);
-    mlx_loop(game->mlx);
 }

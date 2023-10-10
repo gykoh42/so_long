@@ -6,7 +6,7 @@
 /*   By: gykoh <gykoh@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/30 17:36:04 by gykoh             #+#    #+#             */
-/*   Updated: 2023/10/09 16:04:44 by gykoh            ###   ########.fr       */
+/*   Updated: 2023/10/10 12:44:13 by gykoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,20 +90,20 @@ void	component_cnt_check(t_game_info *game)
         while (game->map[i][j] != '\0')
         {   
             if (game->map[i][j] == 'C')
-                game->C_cnt++;
+                game->collect_cnt++;
             if (game->map[i][j] == 'P')
             {
-                game->P_cnt++;
-                game->P_idx_x = j;
-                game->P_idx_y = i;
+                game->player_cnt++;
+                game->player_idx_x = j;
+                game->player_idx_y = i;
             }
             if (game->map[i][j] == 'E')
-                game->E_cnt++;
+                game->exit_cnt++;
             j++;
         }
         i++;
     }
-    if (!(game->C_cnt >= 1 && game->P_cnt == 1 && game->E_cnt == 1))
+    if (!(game->collect_cnt >= 1 && game->player_cnt == 1 && game->exit_cnt == 1))
         error_exit("Error: wrong component count");
 }
 

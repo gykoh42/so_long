@@ -6,7 +6,7 @@
 #    By: gykoh <gykoh@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/30 16:09:51 by gykoh             #+#    #+#              #
-#    Updated: 2023/10/10 11:34:17 by gykoh            ###   ########.fr        #
+#    Updated: 2023/10/10 13:35:03 by gykoh            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,6 +22,7 @@ SOURCES =	./src/main.c \
 			./src/map_total_check.c \
 			./src/map_init.c \
 			./src/draw_window.c \
+			./src/move.c \
 
 OBJECTS	= $(SOURCES:.c=.o)
 
